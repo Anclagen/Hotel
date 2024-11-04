@@ -2,16 +2,11 @@ module.exports = (sequelize, Sequelize) => {
   const Hotels = sequelize.define(
     "Hotels",
     {
-      id: {
-        type: Sequelize.DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      name: {
+      Name: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false,
       },
-      location: {
+      Location: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false,
       },

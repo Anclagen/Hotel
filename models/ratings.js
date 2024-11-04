@@ -1,13 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
-  const Reservations = sequelize.define(
-    "Reservations",
+  const Ratings = sequelize.define(
+    "Ratings",
     {
-      id: {
-        type: Sequelize.DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      rating: {
+      Rating: {
         type: Sequelize.DataTypes.INTEGER,
         validate: {
           min: 1,
@@ -15,27 +10,10 @@ module.exports = (sequelize, Sequelize) => {
         },
         allowNull: false,
       },
-      // Alternate approach to relations
-      // userId: {
-      //   type: Sequelize.DataTypes.INTEGER,
-      //   references: {
-      //     model: "Users",
-      //     key: "id",
-      //   },
-      //   allowNull: false,
-      // },
-      // hotelId: {
-      //   type: Sequelize.DataTypes.INTEGER,
-      //   references: {
-      //     model: "Hotels",
-      //     key: "id",
-      //   },
-      //   allowNull: false,
-      // },
     },
     {
       timestamps: false,
     }
   );
-  return Reservations;
+  return Ratings;
 };
