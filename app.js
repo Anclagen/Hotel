@@ -11,6 +11,7 @@ var usersRouter = require("./routes/users");
 
 // Database
 const db = require("./models/index");
+// adds tables if needed
 db.sequelize.sync({ force: false });
 
 var app = express();

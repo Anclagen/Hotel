@@ -7,15 +7,14 @@ module.exports = (sequelize, Sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      rating: {
-        type: Sequelize.DataTypes.INTEGER,
-        validate: {
-          min: 1,
-          max: 5,
-        },
+      startDate: {
+        type: Sequelize.DataTypes.DATE,
         allowNull: false,
       },
-      // Alternate approach to relations
+      endDate: {
+        type: Sequelize.DataTypes.DATE,
+        allowNull: false,
+      },
       // userId: {
       //   type: Sequelize.DataTypes.INTEGER,
       //   references: {
@@ -24,10 +23,10 @@ module.exports = (sequelize, Sequelize) => {
       //   },
       //   allowNull: false,
       // },
-      // hotelId: {
+      // roomId: {
       //   type: Sequelize.DataTypes.INTEGER,
       //   references: {
-      //     model: "Hotels",
+      //     model: "Rooms",
       //     key: "id",
       //   },
       //   allowNull: false,
