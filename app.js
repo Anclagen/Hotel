@@ -9,6 +9,10 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 //var hotelRouter = require("./routes/hotels")
 
+// Database
+const db = require("./models/index");
+db.sequelize.sync({ force: false });
+
 var app = express();
 
 // view engine setup

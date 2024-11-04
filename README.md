@@ -21,7 +21,7 @@ Hotels:
 - Hotels have many ratings.
 
 Rooms:
-| id | hotel_id | capacity | price |
+| id | hotelId | capacity | price |
 
 - Rooms belong to a hotel.
 
@@ -29,13 +29,14 @@ Users:
 | id | username | password |
 
 Reservation:
-| id | user_id | room_id | start_date | end_date |
+| id | userId | roomId | startDate | endDate |
 
 - Reservations belong to a user.
 - Reservations belong to a room.
 
 Ratings:
-| id | user_id | hotel_id | rate |
+| id | userId | hotelId | rating |
 
 - Ratings belong to a user.
 - Ratings belong to a hotel.
+- One user can give only one rating to one hotel.
