@@ -1,0 +1,13 @@
+body {
+  min-height: 100vh;
+}
+
+.btn-danger,
+a {
+  max-width: 150px !important;
+  margin: 0 0.5rem;
+}
+
+.right {
+  float: right;
+}

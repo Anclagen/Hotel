@@ -40,3 +40,20 @@ Ratings:
 - Ratings belong to a user.
 - Ratings belong to a hotel.
 - One user can give only one rating to one hotel.
+
+## Test data
+
+INSERT INTO Users (FirstName, LastName)
+VALUES ('John', 'Doe'),('Barbara', 'Stones');
+
+INSERT INTO Hotels (Name, Location)
+VALUES ('Street Motel', 'Chicago');
+
+INSERT INTO Hotels (Name, Location)
+VALUES ('Mariott', 'Warshaw');
+
+INSERT INTO Rooms (Capacity, PricePerDay, HotelId)
+VALUES (2, 22.50, 1),(4, 40, 1);
+
+INSERT INTO Rates (UserId, HotelId, Value)
+VALUES (1, 1, 4)

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/stylesheets/hotels.css" rel="stylesheet" />
+    <script src="/javascripts/hotels.js" defer></script>
+  </head>
+  <body class="d-flex flex-column">
+    <h2 class="p-3">Choose a hotel</h2>
+    <div class="list-group" id="hotelList">
+      <% hotels.forEach(function(hotel) { %>
+      <div class="row px-3 py-2 w-100">
+        <span class="col py-1 bg-info"><%=hotel.Name%><span class="right"><%=hotel.Location%></span></span>
+        <a href="/rooms/<%=hotel.id%>" class="col btn btn-secondary"> Rent a room</a>
+        <a href="/hotels/<%=hotel.id%>" class="col btn btn-secondary"> Details</a>
+        <button class="col btn btn-danger" data-id="<%= hotel.id %>" onclick="deleteHotel(this)">Delete</button>
+      </div>
+      <% }); %>
+    </div>
+    <div class="px-3 mt-auto">
+      <button class="btn btn-info right m-3" onclick="addHotel()">Add Hotel</button>
+    </div>
+  </body>
+</html>
