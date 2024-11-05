@@ -26,7 +26,6 @@ fs.readdirSync(__dirname)
   .forEach((file) => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize);
     db[model.name] = model;
-    console.log(db);
   });
 
 // Adds relationships based on those defined in the models associates

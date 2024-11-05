@@ -10,6 +10,11 @@ router.get("/", async function (req, res, next) {
   res.render("hotels", { title: "Hotels", hotels: hotels });
 });
 
+router.get("/:hotelId", async function (req, res, next) {
+  const hotel = await hotelService.getHotelDetails(req.params.hotelId);
+  res.render("hotelDetails", { hotel: hotel });
+});
+
 router.post("/", async function (req, res, next) {
   try {
     let Name = req.body.Name;
@@ -21,6 +26,12 @@ router.post("/", async function (req, res, next) {
     console.log(e);
     res.send(e).status(400).end();
   }
+});
+
+router.post("/:hotelId/rate", async function (req, res, next) {
+  let value = req.body.Value;
+  await hotelService.makeARate(1, req.params.hotelId, value);
+  res.end();
 });
 
 router.delete("/", async function (req, res, next) {

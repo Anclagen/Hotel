@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <%- include('./partials/head.ejs') %>
     <link href="/stylesheets/hotels.css" rel="stylesheet" />
     <script src="/javascripts/hotels.js" defer></script>
   </head>
   <body class="d-flex flex-column">
+    <%- include('./partials/nav.ejs') %>
+
     <h2 class="p-3">Choose a hotel</h2>
     <div class="list-group" id="hotelList">
       <% hotels.forEach(function(hotel) { %>
